@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD231 Home Page</title>
+  <meta name="description" content="This is my homepage for wdd231 front end development.">
+  <meta name="author" content="Caleb Heilmann">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="profile">
+      <img src="images/myself.png" alt="a picture of myself">
+      <h1>Caleb Heilmann</h1>
+    </div>
+    <nav id="mobile-view">
+      <button class="navigation-button"></button>
+      <a href="#" class="active">Home</a>
+      <a href="#">Chamber</a>
+      <a href="https://github.com/" target="_blank">GitHub Profile</a>
+      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+    </nav>
+  </header>
+
+  <nav id="desktop-view">
+    <a href="#" class="active">Home</a>
+    <a href="#">Chamber</a>
+    <a href="https://github.com/" target="_blank">GitHub Profile</a>
+    <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <main>
+    <section class="course-work cards">
+      <h2>Course Work</h2>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
+
+    <section class="location cards">
+      <h2>Washington, US</h2>
+      <figure>
+        <img src="images/seattle-washington.jpg" alt="space needle" width=300>
+        <figcaption>The Space Needle</figcaption>
+      </figure>
+    </section>
+
+    <section class="certificates cards">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div class="filters">
+        <button class="filter all">All</button>
+        <button class="filter cse">CSE</button>
+        <button class="filter wdd">WDD</button>
+      </div>
+
+      <div class="courses">
+
+      </div>
+      <p class="number-of-credits"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&#169;<span id="currentyear"></span>🌲Caleb Heilmann🌲Washington</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+
+</html>

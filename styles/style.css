@@ -1,0 +1,272 @@
+:root {
+  --primary-color: #072AC8;
+  --secondary-color: #E7DD24;
+  --main-font: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+  font-family: var(--main-font);
+  background-color: #fff;
+}
+
+h1, h2 {
+  font-weight: 800;
+}
+
+button {
+  font-family: var(--main-font);
+}
+  
+header {
+  background-color: var(--primary-color);
+  padding: 20px;
+  text-align: center;
+}
+  
+header .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+header .profile img {
+  margin-right: 3vw;
+  border: 2px solid black;
+}
+  
+header .profile h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+  
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: var(--secondary-color);
+  border-bottom: 2px solid black;
+}
+  
+nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 5px 10px;
+}
+  
+nav a.active, nav a:hover {
+  border-bottom: 2px solid black;
+}
+
+#mobile-view {
+  display: none;
+}
+
+main {
+  max-width: 1500px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 4fr 3fr;
+  gap: 20px;
+}
+
+li {
+  margin-left: 50px;
+}
+
+.cards {
+  background-color: #f8f8f8;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.5), -5px -5px 5px rgba(0,0,0,.5);
+}
+
+.cards h2 {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.location {
+  text-align: center;
+}
+
+.certificates {
+  grid-column: 1 / 3;
+  text-align: center; 
+}
+
+.courses {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+}
+
+.location img {
+  border: 2.5px solid black;
+  border-radius: 8px;
+}
+  
+.certificates .filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+  
+.filters button {
+  background-color: var(--secondary-color);
+  color: black;
+  margin: 0 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 25%;
+  height: 30px;
+}
+  
+.filters button:hover {
+  background-color: navy;
+  color: white;
+  border: none;
+}
+  
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+  
+.course {
+  background-color: darkred;
+  color: white;
+  border: none;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 30%;
+  height: 50px;
+}
+
+.course:hover {
+  background-color: firebrick;
+  color: black;
+}
+
+.course.completed {
+  background-color: darkgreen;
+}
+
+.course.completed:hover {
+  background-color: limegreen;
+  color: black;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 601px) {
+  figure img {
+    width: 200px;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding-top: 3rem;
+  }
+
+  #mobile-view {
+    text-align: right;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #mobile-view * {
+    display: none;
+  }
+
+  #mobile-view button {
+    display: inline;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .course {
+    margin: auto;
+    width: 90%;
+  }
+
+  #desktop-view {
+    display: none;
+  }
+    
+  #mobile-view a {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .navigation-button {
+    background-color: var(--secondary-color);
+    border: none;
+  }
+
+  .navigation-button:hover {
+    background-color: black;
+    color: var(--secondary-color);
+  }
+
+  #mobile-view a.active, #mobile-view a:hover {
+    background-color: black;
+    color: var(--secondary-color);
+  }
+
+  .active#mobile-view {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button.active {
+    width: 13px;
+    align-self: self-end;
+  }
+
+  .active#mobile-view :not(:first-child) {
+    display: block;
+    text-align: center;
+  }
+
+  .cards {
+    box-shadow: none;
+  }
+}
