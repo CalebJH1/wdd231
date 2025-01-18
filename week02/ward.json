@@ -1,0 +1,33 @@
+{
+    "members": [
+        {
+            "name": "Smith",
+            "dateJoined": "01/20/2022",
+            "numberOfPeople": 4,
+            "visitedByBishopric": false,
+            "individualMembers": [
+                {
+                    "Noah": {
+                        "gender": "m",
+                        "birthdate": "10/2/2005"
+                    },
+
+                    "Alex": {
+                        "gender": "f",
+                        "birthdate": "6/10/2008"
+                    },
+
+                    "Jacob": {
+                        "gender": "m",
+                        "birthdate": "2/19/1978"
+                    },
+
+                    "Jordan": {
+                        "gender": "f",
+                        "birthdate": "3/9/1980"
+                    }
+                }
+            ]
+        }
+    ]
+}
