@@ -1,33 +1,28 @@
 {
+    "familyName": "Smith",
+    "dateJoined": "01/20/2022",
+    "numberOfMembers": 4,
+    "visitedByBishopric": true,
     "members": [
         {
-            "name": "Smith",
-            "dateJoined": "01/20/2022",
-            "numberOfPeople": 4,
-            "visitedByBishopric": false,
-            "individualMembers": [
-                {
-                    "Noah": {
-                        "gender": "m",
-                        "birthdate": "10/2/2005"
-                    },
-
-                    "Alex": {
-                        "gender": "f",
-                        "birthdate": "6/10/2008"
-                    },
-
-                    "Jacob": {
-                        "gender": "m",
-                        "birthdate": "2/19/1978"
-                    },
-
-                    "Jordan": {
-                        "gender": "f",
-                        "birthdate": "3/9/1980"
-                    }
-                }
-            ]
+            "name": "Noah",
+            "gender": "m",
+            "birthdate": "10/02/2005"
+        },
+        {
+            "name": "Alex",
+            "gender": "f",
+            "birthdate": "6/10/2008"
+        },
+        {
+            "name": "John",
+            "gender": "m",
+            "birthdate": "02/19/1978"
+        },
+        {
+            "name": "Jordan",
+            "gender": "f",
+            "birthdate": "03/09/1980"
         }
     ]
 }
