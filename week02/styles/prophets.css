@@ -17,7 +17,7 @@ h2 {
 
 #cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(4, 1fr)
 }
 
 button {
@@ -32,6 +32,12 @@ button:hover {
 
 footer {
     background-color: lightgray;
+}
+
+@media screen and (width <= 700px) {
+    #cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media screen and (width <= 600px) {
