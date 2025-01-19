@@ -1,0 +1,51 @@
+* {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+main {
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+h2 {
+    font-size: 12pt;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+button {
+    width: 15%;
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+button:hover {
+    border: 3px solid black;
+}
+
+footer {
+    background-color: lightgray;
+}
+
+@media screen and (width <= 600px) {
+    #cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 1em;
+        padding: 10px;
+    }
+}
