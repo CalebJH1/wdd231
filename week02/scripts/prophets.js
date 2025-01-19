@@ -71,7 +71,7 @@ const filterProphets = (buttonPressed) => {
                 const birthYear = new Date(prophet.birthdate).getFullYear();
                 const deathYear = prophet.death ? new Date(prophet.death).getFullYear() : new Date().getFullYear();
                 const age = deathYear - birthYear;
-                console.log(`${prophet.name} ${prophet.lastname} lived to ${age} years`);
+                console.log(`${prophet.name} ${prophet.lastname} lived to ${age} years old.`);
                 return age >= 95;
             });
             break;
