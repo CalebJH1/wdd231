@@ -1,4 +1,4 @@
-const url = "directory.json";
+const url = "data/directory.json";
 const memberDirectory = document.getElementById("memberDirectory");
 const gridViewButton = document.getElementById("gridView");
 const listViewButton = document.getElementById("listView");
