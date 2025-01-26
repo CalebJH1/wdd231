@@ -5,8 +5,7 @@
         "phone": "123-456-7890",
         "website": "#",
         "image": "images/company-one-image.jpg",
-        "membershipLevel": 1,
-        "favicon": "favicons/company-one-favicon.ico"
+        "membershipLevel": 1
     },
     {
         "name": "Company Two",
@@ -14,8 +13,7 @@
         "phone": "123-456-7890",
         "website": "#",
         "image": "images/company-two-image.jpg",
-        "membershipLevel": 2,
-        "favicon": "favicons/company-two-favicon.ico"
+        "membershipLevel": 2
     },
     {
         "name": "Company Three",
@@ -23,8 +21,7 @@
         "phone": "123-456-7890",
         "website": "#",
         "image": "images/company-three-image.jpg",
-        "membershipLevel": 3,
-        "favicon": "favicons/company-three-favicon.ico"
+        "membershipLevel": 3
     },
     {
         "name": "Company Four",
@@ -32,8 +29,7 @@
         "phone": "(123) 456-7890",
         "website": "#",
         "image": "images/company-four-image.jpg",
-        "membershipLevel": 2,
-        "favicon": "favicons/company-one-favicon.ico"
+        "membershipLevel": 2
     },
     {
         "name": "Company Five",
@@ -41,8 +37,7 @@
         "phone": "123-456-7890",
         "website": "#",
         "image": "images/company-five-image.jpg",
-        "membershipLevel": 2,
-        "favicon": "favicons/company-two-favicon.ico"
+        "membershipLevel": 2
     },
     {
         "name": "Company Six",
@@ -50,8 +45,7 @@
         "phone": "123-456-7890",
         "website": "#",
         "image": "images/company-six-image.jpg",
-        "membershipLevel": 1,
-        "favicon": "favicons/company-three-favicon.ico"
+        "membershipLevel": 1
     },
     {
         "name": "Company Seven",
@@ -59,8 +53,7 @@
         "phone": "(123) 456-7890",
         "website": "#",
         "image": "images/company-seven-image.jpg",
-        "membershipLevel": 1,
-        "favicon": "favicons/company-one-favicon.ico"
+        "membershipLevel": 1
     },
     {
         "name": "Company Eight",
@@ -68,8 +61,7 @@
         "phone": "123-456-7890",
         "website": "#",
         "image": "images/company-eight-image.jpg",
-        "membershipLevel": 2,
-        "favicon": "favicons/company-two-favicon.ico"
+        "membershipLevel": 2
     },
     {
         "name": "Company Nine",
@@ -77,7 +69,6 @@
         "phone": "123-456-7890",
         "website": "#",
         "image": "images/company-nine-image.jpg",
-        "membershipLevel": 3,
-        "favicon": "favicons/company-three-favicon.ico"
+        "membershipLevel": 3
     }
   ]
