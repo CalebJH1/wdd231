@@ -159,9 +159,9 @@ nav a.active {
   
   .list {
     grid-template-columns: 1fr;
-
-    img {display: none;}
   }
+
+  .list img {display: none;}
 
   .member-card {
     border: .5em solid var(--seal-brown);
@@ -207,22 +207,23 @@ nav a.active {
     justify-content: space-around;
   }
 
-  footer button {
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
+  footer a {
+    display: block;
+    padding: 10px 20px;
     background-color: var(--dark-pastel-green);
+    border: none;
+    border-radius: 50px;
   }
 
   .social-media {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
 
-  footer button:hover {background-color: var(--celadon);}
+  footer a:hover {background-color: var(--celadon);}
 
-  footer button:active {background-color: var(--pigment-green);}
+  footer a:active {background-color: var(--pigment-green);}
 
   footer p {
     color: var(--celadon);
