@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Company One",
+        "address": "123 Main Street, City, State",
+        "phone": "123-456-7890",
+        "website": "#",
+        "image": "images/company-one-image.jpg",
+        "membershipLevel": 1,
+        "favicon": "favicons/company-one-favicon.ico"
+    },
+    {
+        "name": "Company Two",
+        "address": "123 Main Street, City, State",
+        "phone": "123-456-7890",
+        "website": "#",
+        "image": "images/company-two-image.jpg",
+        "membershipLevel": 2,
+        "favicon": "favicons/company-two-favicon.ico"
+    },
+    {
+        "name": "Company Three",
+        "address": "123 Main Street, City, State",
+        "phone": "123-456-7890",
+        "website": "#",
+        "image": "images/company-three-image.jpg",
+        "membershipLevel": 3,
+        "favicon": "favicons/company-three-favicon.ico"
+    },
+    {
+        "name": "Company Four",
+        "address": "123 Main St, City, State",
+        "phone": "(123) 456-7890",
+        "website": "#",
+        "image": "images/company-four-image.jpg",
+        "membershipLevel": 2,
+        "favicon": "favicons/company-one-favicon.ico"
+    },
+    {
+        "name": "Company Five",
+        "address": "123 Main Street, City, State",
+        "phone": "123-456-7890",
+        "website": "#",
+        "image": "images/company-five-image.jpg",
+        "membershipLevel": 2,
+        "favicon": "favicons/company-two-favicon.ico"
+    },
+    {
+        "name": "Company Six",
+        "address": "123 Main Street, City, State",
+        "phone": "123-456-7890",
+        "website": "#",
+        "image": "images/company-six-image.jpg",
+        "membershipLevel": 1,
+        "favicon": "favicons/company-three-favicon.ico"
+    },
+    {
+        "name": "Company Seven",
+        "address": "123 Main Street, City, State",
+        "phone": "(123) 456-7890",
+        "website": "#",
+        "image": "images/company-seven-image.jpg",
+        "membershipLevel": 1,
+        "favicon": "favicons/company-one-favicon.ico"
+    },
+    {
+        "name": "Company Eight",
+        "address": "123 Main Street, City, State",
+        "phone": "123-456-7890",
+        "website": "#",
+        "image": "images/company-eight-image.jpg",
+        "membershipLevel": 2,
+        "favicon": "favicons/company-two-favicon.ico"
+    },
+    {
+        "name": "Company Nine",
+        "address": "123 Main Street, City, State",
+        "phone": "123-456-7890",
+        "website": "#",
+        "image": "images/company-nine-image.jpg",
+        "membershipLevel": 3,
+        "favicon": "favicons/company-three-favicon.ico"
+    }
+  ]
