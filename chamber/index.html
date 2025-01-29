@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is the directory page listing the chamber members">
+  <meta name="author" content="Caleb Heilmann">
+  <title>Chamber Home Page</title>
+  <meta property="og:title" content="Chamber Member Directory">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calebjh1.github.io/wdd231/chamber/images/web-image.jpg">
+  <meta property="og:url" content="https://calebjh1.github.io/wdd231/chamber/directory.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/chamber-logo.png">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="left-side grid-container">
+      <div class="grid-container-first-child">
+        <img src="images/web-image.jpg" alt="chamber logo">
+      </div>
+      <div class="grid-container-second-child">
+        <h1>Washington</h1>
+      </div>
+      <div class="grid-container-third-child">
+        <p>Chamber of Commerce</p>
+      </div>
+    </div>
+    <nav>
+      <button id="hamButton">&#9776;</button>
+      <ul>
+        <li><a href="#" target="_blank">Home</a></li>
+        <li><a href="#" target="_blank">Join</a></li>
+        <li><a href="#" target="_blank" class="active">Directory</a></li>
+        <li><a href="#" target="_blank">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <img class="hero-image" src="images/hero-image.webp" alt="hero image">
+    <div class="main-content">
+        <div class="call-to-action">
+            <h2>Join the Chamber</h2>
+            <p>Join the Chamber of Commerce to connect with local businesses and support your community.</p>
+            <a href="#" class="button">Join Now</a>
+        </div>
+        <div class="current-events">
+            <h2>Current Events</h2>
+            <ul class="events-list">
+            </ul>
+        </div>
+        <div class="weather-section">
+            <h2>Weather</h2>
+            <div class="button-container">
+                <button id="getSeattleWeather" class="weather-button">Get Seattle Weather</button>
+                <button id="getSpokaneWeather" class="weather-button">Get Spokane Weather</button>
+                <button id="getTacomaWeather" class="weather-button">Get Tacoma Weather</button>
+                <button id="getOlympiaWeather" class="weather-button">Get Olympia Weather</button>
+                <button id="getVancouverWeather" class="weather-button">Get Vancouver Weather</button>
+                <button id="getBattleGroundWeather" class="weather-button">Get Battle Ground Weather</button>
+                <p id="temperature"></p>
+                <figure>
+                    <img id="weather-icon" src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <div class="forecast">
+                    <h3>3-Day Forecast</h3>
+                    <ul id="forecast-list"></ul>
+                </div>
+        </div>
+        <div class="spotlight">
+            <h2>Spotlight</h2>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>Washington Chamber of Commerce</p>
+      <p>700 Evergreen Boulevard (Fake)</p>
+      <p>Washington State 300 (Fake)</p>
+      <p>info@chamber.com</p>
+      <p>123-456-7890</p>
+    </div>
+    <div class="social-media">
+      <a href="https://youtube.com" target="_blank"><img src="images/youtube-logo.png" alt="youtube"></a>
+      <a href="https://x.com" target="_blank"><img src="images/x-logo.png" alt="x"></a>
+      <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-logo.png" alt="linkedin"></a>
+    </div>
+    <div>
+      <p>WDD231 Class Project</p>
+      <p>Caleb Heilmann</p>
+      <p>&copy;<span id="year"></span> Washington Chamber of Commerce</p>
+      <p>Last Modification: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+</body>
+</html>
