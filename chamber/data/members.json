@@ -6,7 +6,8 @@
         "website": "#",
         "image": "images/company-one-image.jpg",
         "membershipLevel": 1,
-        "current": true
+        "current": true,
+        "eventDescription": "This event is sponsored by Company One. Have a great time!"
     },
     {
         "name": "Company Two",
@@ -33,7 +34,8 @@
         "website": "#",
         "image": "images/company-four-image.jpg",
         "membershipLevel": 2,
-        "current": true
+        "current": true,
+        "eventDescription": "This event is sponsored by Company Four. There will be food and drinks provided."
     },
     {
         "name": "Company Five",
@@ -51,7 +53,8 @@
         "website": "#",
         "image": "images/company-six-image.jpg",
         "membershipLevel": 1,
-        "current": true
+        "current": true,
+        "eventDescription": "This event is sponsored by Company Six. In this event, we will be discussing the future of our industry."
     },
     {
         "name": "Company Seven",
@@ -78,6 +81,7 @@
         "website": "#",
         "image": "images/company-nine-image.jpg",
         "membershipLevel": 3,
-        "current": true
+        "current": true,
+        "eventDescription": "This event is sponsored by Company Nine. We will be having a raffle for all attendees."
     }
   ]

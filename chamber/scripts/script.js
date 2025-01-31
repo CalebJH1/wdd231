@@ -1,5 +1,5 @@
 const hamburgerButton = document.getElementById("hamButton");
-const eventList = document.querySelector(".events-list");
+const eventList = document.getElementById("events-list");
 const weatherButtons = document.querySelectorAll(".weather-button");
 const weatherIcon = document.querySelector('#weather-icon');
 const captionDesc = document.querySelector('figcaption');
@@ -9,12 +9,9 @@ const lat = 47.60591;
 const lon = -122.33156;
 const membersPath = "data/members.json";
 
-
-
 async function getMembers() {
   const response = await fetch(membersPath);
   const members = await response.json();
-  console.log(members);
   
   showCurrentEvents(members);
 }
@@ -25,8 +22,7 @@ async function getCurrentWeather(latitude, longitude) {
       const response = await fetch(url);
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
-        displayWeatherResults(data);
+        await displayWeatherResults(data);
         getForecast(latitude, longitude);
       } else {
           throw Error(await response.text());
@@ -37,12 +33,11 @@ async function getCurrentWeather(latitude, longitude) {
 }
 
 async function getForecast(latitude, longitude) {
-  const url = `//api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=3&units=imperial&appid=fb4e648199f2af7fe879c45d6a46bf04`;
+  const url = `//api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=d058bca00aab868d78e766a79f4ed821`;
   try {
       const response = await fetch(url);
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         displayForecast(data);
       } else {
           throw Error(await response.text());
@@ -55,7 +50,6 @@ async function getForecast(latitude, longitude) {
 function addEventListeners(weatherButtons) {
   weatherButtons.forEach(button => {
     button.addEventListener("click", () => {
-      console.log(button.id);
       switch (button.id) {
         case "getSeattleWeather":
           latitude = 47.60621;
@@ -87,69 +81,81 @@ function addEventListeners(weatherButtons) {
 }
 
 function showCurrentEvents(members) {
-  currentMembers = members.filter(member => member.current);
+  const currentMembers = members.filter(member => member.current);
   eventList.innerHTML = currentMembers.map(member => `
-      <li class="event-item">
+      <li class="event-item level${member.membershipLevel}">
       <h3>${member.name}</h3>
       <p>${member.address}</p>
       <p>${member.phone}</p>
       <p>Membership Level: ${member.membershipLevel}</p>
       <a href="${member.website}" target="_blank">Visit Website</a>
-      </li>;
+      <p>${member.eventDescription}</p>
+      </li>
   `).join("");
   showSpotlight(members);
 };
 
 function showSpotlight(members) {
-  const spotlight = document.querySelector(".spotlight");
+  const spotlight = document.getElementById("spotlight");
   const filteredMembers = members.filter(member => member.membershipLevel >= 2);
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     const index = Math.floor(Math.random() * filteredMembers.length);
     const randomMember = filteredMembers[index];
     filteredMembers.splice(index, 1);
     spotlight.innerHTML += `
-    <h2>${randomMember.name}</h2>
-    <p>${randomMember.address}</p>
-    <p>${randomMember.phone}</p>
+    <div class="spotlight-card level${randomMember.membershipLevel}">
+    <h3>${randomMember.name}</h3>
+    <img src="${randomMember.image}" alt="${randomMember.name}">
+    <div class="spotlight-item">
+    <p>${randomMember.address},</p>
+    <p>${randomMember.phone}, </p>
     <p>Membership Level: ${randomMember.membershipLevel}</p>
     <a href="${randomMember.website}" target="_blank">Visit Website</a>
+    </div>
+    </div>
   `;
   }
 }
 
 function displayWeatherResults(data) {
-  document.getElementById("temperature").textContent = `The current temperature in ${data.name} is ${data.main.temp}°F`;
-  const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-  let desc = data.weather[0].description;
-  weatherIcon.setAttribute('src', iconsrc);
-  weatherIcon.setAttribute('alt', desc);
-  captionDesc.textContent = desc;
+  currentWeather = document.getElementById("current-weather");
+  currentWeather.innerHTML = "";
+  document.getElementById("temperature").textContent = `The current temperature in ${data.name} is ${Math.round(data.main.temp)}°F`;
+  data.weather.forEach(weather => {
+    const figure = document.createElement('figure');
+    const icon = document.createElement('img');
+    const caption = document.createElement('figcaption');
+    const iconsrc = `https://openweathermap.org/img/w/${weather.icon}.png`;
+    const desc = capitalizeWords(weather.description);
+    icon.setAttribute('class', "weather-icon");
+    icon.setAttribute('src', iconsrc);
+    icon.setAttribute('alt', desc);
+    caption.textContent = desc;
+    figure.appendChild(icon);
+    figure.appendChild(caption);
+    currentWeather.appendChild(figure);
+  });
 }
 
 function displayForecast(data) {
-  forecastList.innerHTML = data.list.map(day => `
+  forecastList.innerHTML = "";
+  const array = data.list.slice(0, 24);
+  array.forEach(day => {
+    const iconsrc = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+    let desc = capitalizeWords(day.weather[0].description);
+    forecastList.innerHTML += `
     <li class="forecast-item">
-      <h3>${new Date(day.dt * 1000).toLocaleDateString("en-US", { weekday: "long" })}</h3>
-      <p>Temperature: ${day.main.temp}°F</p>
-      <p>Weather: ${day.weather[0].description}</p>
-    </li>
-  `).join("");
+      <h3>${new Date(day.dt * 1000).toLocaleDateString("en-US", { weekday: "long" })} ${new Date(day.dt * 1000).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" })}</h3>
+      <p>Temperature: ${Math.round(day.main.temp)}°F</p>
+      <img src="${iconsrc}" alt="${desc}">
+      <p>${desc}</p>
+    </li>`;
+  });
+};
+
+function capitalizeWords(string) {
+  return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
-
-// const showMembers = (view) => {
-//   memberDirectory.className = view;
-
-//   memberDirectory.innerHTML = members.map(member => `
-//     <div class="member-card level${member.membershipLevel}">
-//       <img src="${member.image}" alt="${member.name}">
-//       <h3>${member.name}</h3>
-//       <p>${member.address}</p>
-//       <p>${member.phone}</p>
-//       <p>Membership Level: ${member.membershipLevel}</p>
-//       <a href="${member.website}" target="_blank">Visit Website</a>
-//     </div>
-//   `).join("");
-// };
 
 hamburgerButton.addEventListener("click", () => {
   const nav = document.querySelector("nav");
@@ -162,7 +168,7 @@ hamburgerButton.addEventListener("click", () => {
     hamburgerButton.innerHTML = "&#9776;";
   }
 });
-  
+
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 

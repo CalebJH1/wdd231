@@ -35,49 +35,48 @@
     <nav>
       <button id="hamButton">&#9776;</button>
       <ul>
-        <li><a href="#" target="_blank">Home</a></li>
+        <li><a href="#" target="_blank" class="active">Home</a></li>
         <li><a href="#" target="_blank">Join</a></li>
-        <li><a href="#" target="_blank" class="active">Directory</a></li>
+        <li><a href="directory.html" target="_blank">Directory</a></li>
         <li><a href="#" target="_blank">Discover</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <img class="hero-image" src="images/hero-image.webp" alt="hero image">
-    <div class="main-content">
-        <div class="call-to-action">
-            <h2>Join the Chamber</h2>
-            <p>Join the Chamber of Commerce to connect with local businesses and support your community.</p>
-            <a href="#" class="button">Join Now</a>
+<main>
+  <img id="hero-image" src="images/hero-image.webp" alt="hero image">
+    <div id="call-to-action">
+      <h1>Join the Chamber</h1>
+      <p>Join the Chamber of Commerce to connect with local businesses and support your community.</p>
+      <a href="#" id="call-to-action-button">Join Now</a>
+    </div>
+    <div id="main-content">
+      <div id="current-events">
+        <h2>Current Events</h2>
+        <ul id="events-list">
+        </ul>
+      </div>
+      <div id="spotlight">
+        <h2>Spotlight</h2>
+      </div>
+      <div id="weather-section">
+        <h2>Weather</h2>
+        <div id="weather-button-container">
+          <button id="getSeattleWeather" class="weather-button">Get Seattle Weather</button>
+          <button id="getSpokaneWeather" class="weather-button">Get Spokane Weather</button>
+          <button id="getTacomaWeather" class="weather-button">Get Tacoma Weather</button>
+          <button id="getOlympiaWeather" class="weather-button">Get Olympia Weather</button>
+          <button id="getVancouverWeather" class="weather-button">Get Vancouver Weather</button>
+          <button id="getBattleGroundWeather" class="weather-button">Get Battle Ground Weather</button>
         </div>
-        <div class="current-events">
-            <h2>Current Events</h2>
-            <ul class="events-list">
-            </ul>
+        <p id="temperature"></p>
+        <div id="current-weather">
         </div>
-        <div class="weather-section">
-            <h2>Weather</h2>
-            <div class="button-container">
-                <button id="getSeattleWeather" class="weather-button">Get Seattle Weather</button>
-                <button id="getSpokaneWeather" class="weather-button">Get Spokane Weather</button>
-                <button id="getTacomaWeather" class="weather-button">Get Tacoma Weather</button>
-                <button id="getOlympiaWeather" class="weather-button">Get Olympia Weather</button>
-                <button id="getVancouverWeather" class="weather-button">Get Vancouver Weather</button>
-                <button id="getBattleGroundWeather" class="weather-button">Get Battle Ground Weather</button>
-                <p id="temperature"></p>
-                <figure>
-                    <img id="weather-icon" src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-                <div class="forecast">
-                    <h3>3-Day Forecast</h3>
-                    <ul id="forecast-list"></ul>
-                </div>
+        <div id="forecast">
+          <h3>3-Day Forecast</h3>
+          <ul id="forecast-list"></ul>
         </div>
-        <div class="spotlight">
-            <h2>Spotlight</h2>
-        </div>
+      </div>
     </div>
   </main>
 
@@ -89,7 +88,7 @@
       <p>info@chamber.com</p>
       <p>123-456-7890</p>
     </div>
-    <div class="social-media">
+    <div id="social-media">
       <a href="https://youtube.com" target="_blank"><img src="images/youtube-logo.png" alt="youtube"></a>
       <a href="https://x.com" target="_blank"><img src="images/x-logo.png" alt="x"></a>
       <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-logo.png" alt="linkedin"></a>
