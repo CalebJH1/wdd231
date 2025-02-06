@@ -1,7 +1,7 @@
 const hamburgerButton = document.getElementById("hamButton");
-const currentUrl = window.location.href;
+const url = window.location.href;
 
-const formData = currentUrl.split("?")[1].split("&");
+const formData = url.split("?")[1].split("&");
 
 function show(field) {
     let result = "";
@@ -11,9 +11,8 @@ function show(field) {
             result = pair.split("=")[1];
             result = result
               .replace("%40", "@")
-              .replace("+", " ")
-              .replace("%3A", ":")
-              .replace("%3A", ":");
+              .replaceAll("%3A", ":")
+              .replaceAll("+", " ");
         }
     });
 
