@@ -19,9 +19,9 @@ function show(field) {
     return result;
 }
 
-const showInfo = document.getElementById("formResults");
+const formResults = document.getElementById("formResults");
 
-showInfo.innerHTML = `
+formResults.innerHTML = `
 <p>First name: ${show("first")}</p>
 <p>Last name: ${show("last")}</p>
 <p>Organization title: ${show("organization-title")}</p>
