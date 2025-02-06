@@ -15,6 +15,7 @@
     --paragraph-font: 'Roboto Condensed'
   }
   
+  /* normalize css */
   body, h1, p, ul, li, a, button {
     text-align: center;
     margin: 0;
