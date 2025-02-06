@@ -104,11 +104,7 @@ function displayCourseButtons(courses) {
   
   for (let i = 0; i < courseButtonList.length; i++) {
     courseButtonList[i].addEventListener('click', () => {
-      const courseSubject = courses[i].subject;
-      const courseNumber = courses[i].number;
-      const courseTitle = courses[i].title;
-      const courseCredits = courses[i].credits;
-      displayIndividualCredits(courseSubject, courseNumber, courseTitle, courseCredits);
+      displayModal(courses[i]);
     });
   }
 }
@@ -130,8 +126,23 @@ function filterCourses(category) {
   }
 }
 
-function displayIndividualCredits(subject, number, title, credits) {
-  creditDisplay.textContent = `Credits for ${subject}${number} ${title}: ${credits}.`;
+function displayModal(course) {
+  const modal = document.querySelector('dialog');
+  modal.innerHTML = '';
+  modal.innerHTML = `
+    <button id="closeModal">&#x2715;</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+  `;
+  modal.showModal();
+
+  document.getElementById('closeModal').addEventListener('click', () => {
+    modal.close();
+  });
+  // creditDisplay.textContent = `Credits for ${subject}${number} ${title}: ${credits}.`;
 }
 
 displayCourseButtons(courses);

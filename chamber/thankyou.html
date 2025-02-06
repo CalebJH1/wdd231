@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This is the home page for the Washington Chamber of Commerce.">
+  <meta name="description" content="This is the join page for the Washington Chamber of Commerce.">
   <meta name="author" content="Caleb Heilmann">
   <title>WDD 231 - Chamber Home Page</title>
-  <meta property="og:title" content="WDD 231 - Chamber Home Page">
+  <meta property="og:title" content="WDD 231 - Chamber Join Page">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://calebjh1.github.io/wdd231/chamber/images/web-image.jpg">
-  <meta property="og:url" content="https://calebjh1.github.io/wdd231/chamber/index.html">
+  <meta property="og:url" content="https://calebjh1.github.io/wdd231/chamber/join.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="icon" href="images/chamber-logo.png">
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/script.js" defer></script>
+  <link rel="stylesheet" href="styles/join.css">
+  <script src="scripts/thankyou.js" defer></script>
 </head>
 
 <body>
@@ -35,48 +35,21 @@
     <nav>
       <button id="hamButton">&#9776;</button>
       <ul>
-        <li><a href="#" target="_blank" class="active">Home</a></li>
-        <li><a href="#" target="_blank">Join</a></li>
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="#" target="_blank" class="active">Join</a></li>
         <li><a href="directory.html" target="_blank">Directory</a></li>
         <li><a href="#" target="_blank">Discover</a></li>
       </ul>
     </nav>
+    <img id="hero-image" src="images/hero-image.webp" alt="hero image">
   </header>
-<main>
-  <img id="hero-image" src="images/hero-image.webp" alt="hero image">
-    <div id="call-to-action">
-      <h1>Join the Chamber</h1>
-      <p>Join the Chamber of Commerce to connect with local businesses and support your community.</p>
-      <a href="#" id="call-to-action-button">Join Now</a>
-    </div>
-    <div id="main-content">
-      <div id="current-events">
-        <h2>Current Events</h2>
-        <ul id="events-list">
-        </ul>
-      </div>
-      <div id="spotlight">
-        <h2>Spotlight</h2>
-      </div>
-      <div id="weather-section">
-        <h2>Weather</h2>
-        <div id="weather-button-container">
-          <button id="getSeattleWeather" class="weather-button">Get Seattle Weather</button>
-          <button id="getSpokaneWeather" class="weather-button">Get Spokane Weather</button>
-          <button id="getTacomaWeather" class="weather-button">Get Tacoma Weather</button>
-          <button id="getOlympiaWeather" class="weather-button">Get Olympia Weather</button>
-          <button id="getVancouverWeather" class="weather-button">Get Vancouver Weather</button>
-          <button id="getBattleGroundWeather" class="weather-button">Get Battle Ground Weather</button>
-        </div>
-        <p id="temperature"></p>
-        <div id="current-weather">
-        </div>
-        <div id="forecast">
-          <h3>3-Day Forecast</h3>
-          <ul id="forecast-list"></ul>
-        </div>
-      </div>
-    </div>
+
+  <main id="thank-you-page">
+    <h1>Thank you for joining us!</h1>
+
+    <h2>Your Form Details</h2>
+
+    <div id="form-results"></div>
   </main>
 
   <footer>

@@ -85,12 +85,26 @@ li {
   margin-left: 50px;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
 .cards {
   background-color: #f8f8f8;
   border: 1px solid black;
   border-radius: 10px;
   padding-bottom: 15px;
   box-shadow: 5px 5px 5px rgba(0,0,0,.5), -5px -5px 5px rgba(0,0,0,.5);
+  animation: fadeIn 1s;
+
 }
 
 .cards h2 {
@@ -175,6 +189,29 @@ li {
 .course.completed:hover {
   background-color: limegreen;
   color: black;
+}
+
+dialog {
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: .25rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 3rem #777;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+}
+
+::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+dialog button {
+  position: absolute;
+  top: 23px;
+  right: 23px;
+  padding: .5rem 1rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
 }
 
 footer {
