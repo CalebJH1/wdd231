@@ -20,17 +20,17 @@ function show(field) {
     return result;
 }
 
-const showInfo = document.querySelector("#form-results");
+const showInfo = document.getElementById("formResults");
 
 showInfo.innerHTML = `
-<p>First Name: ${show("first")}</p>
-<p>Last Name: ${show("last")}</p>
-<p>Organization Title: ${show("organization-title")}</p>
+<p>First name: ${show("first")}</p>
+<p>Last name: ${show("last")}</p>
+<p>Organization title: ${show("organization-title")}</p>
 <p>Email: ${show("email")}</p>
-<p>Mobile Phone Number: ${show("mobile-phone")}</p>
-<p>Organization Name: ${show("org")}</p>
-<p>Organization Description: ${show("description")}
-<p>Membership Level: ${show("membership-level")}</p>
+<p>Mobile Phone number: ${show("mobile-phone")}</p>
+<p>Organization name: ${show("org")}</p>
+<p>Organization description: ${show("description")}
+<p>Membership level: ${show("membership-level")}</p>
 <p>Time created: ${show("timestamp")}</p>
 `;
 

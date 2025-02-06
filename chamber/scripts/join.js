@@ -59,7 +59,7 @@ const membershipLevels = [
 ];
 
 const hamburgerButton = document.getElementById("hamButton");
-const closeButton = document.querySelector("#close-button");
+const closeButton = document.getElementById("closeButton");
 const dialogBox = document.querySelector("dialog");
 const modalButtons = document.querySelectorAll(".member");
 
@@ -83,9 +83,9 @@ modalButtons.forEach(modalButton => {
   modalButton.addEventListener("click", () => {
       const memberId = modalButton.getAttribute("id");
       const membershipLevel = membershipLevels.filter((level) => level.id == memberId)[0];
-      const name = document.querySelector("#membership-name");
-      const cost = document.querySelector("#membership-cost");
-      const content = document.querySelector("#membership-content");
+      const name = document.getElementById("membershipName");
+      const cost = document.getElementById("membershipCost");
+      const content = document.getElementById("membershipContent");
       name.textContent = membershipLevel.name;
       cost.innerHTML = `<strong>Cost:</strong> ${membershipLevel.cost}`;
       content.innerHTML = `<strong>Benefits: </strong>${membershipLevel.benefits.join(" ")}`;
@@ -93,7 +93,7 @@ modalButtons.forEach(modalButton => {
   })
 })
 
-document.querySelector("#form-timestamp").setAttribute('value', getTimeStamp())
+document.getElementById("formTimestamp").setAttribute('value', getTimeStamp())
 
 hamburgerButton.addEventListener("click", () => {
   const nav = document.querySelector("nav");

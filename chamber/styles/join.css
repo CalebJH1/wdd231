@@ -148,7 +148,7 @@
 
   textarea {height: 150px;}
 
-  #membership-cards {
+  #membershipCards {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -226,7 +226,7 @@
 
   dialog h3 {color: var(--seal-brown); text-align: center;}
 
-  dialog #close-button {
+  #closeButton {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -236,7 +236,7 @@
     cursor: pointer;
   }
 
-  #thank-you-page {
+  #thankYouPage {
     display: flex;
     flex-direction: column;
     max-width: 90%;
@@ -245,7 +245,7 @@
 
   h2 {text-align: center;}
 
-  #thank-you-page p {
+  #thankYouPage p {
     line-height: 1.5;
     padding: 0.1rem;
   }
@@ -331,13 +331,13 @@
         flex-direction: column;
     }
 
-    #join-form {width: 90%; margin: auto;}
+    #joinForm {width: 90%; margin: auto;}
   }
 
   @media screen and (width <= 340px) {
     main {width: 100%;}
 
-    #join-form {margin: 0; width: 93%;}
+    #joinForm {margin: 0; width: 93%;}
 
     label:last-child {width: 150px;}
 
