@@ -1,14 +1,13 @@
-const hamburgerButton = document.getElementById("hamButton");
 const membershipLevels = [
   {
       id: "non-profit",
       name: "Non-Profit Membership",
       cost: "$100 per year",
       benefits: [
-          "Access to special events designed for non-profit organizations.",
-          "Discounted rates on training sessions and workshops.",
-          "Opportunities to network with other non-profit professionals.",
-          "Event participation discounts to maximize your organization's reach."
+        "Access to community events.",
+        "Networking opportunities.",
+        "Volunteer opportunities.",
+        "Recognition on our website."
       ]
   },
   {
@@ -16,10 +15,12 @@ const membershipLevels = [
       name: "Bronze Membership",
       cost: "$250 per year",
       benefits: [
-          "All the benefits of the Non-Profit Membership.",
-          "Additional advertising opportunities on our platform.",
-          "Basic training sessions to help grow your business.",
-          "Discounted rates on various events and workshops."
+        "Access to community events.",
+        "Networking opportunities.",
+        "Volunteer opportunities.",
+        "Recognition on our website.",
+        "Discounts on services.",
+        "Monthly newsletter."
       ]
   },
   {
@@ -27,10 +28,14 @@ const membershipLevels = [
       name: "Silver Membership",
       cost: "$500 per year",
       benefits: [
-          "Includes all the benefits of the Bronze Membership.",
-          "Access to advanced training sessions and professional development.",
-          "Premium advertising slots to showcase your organization.",
-          "Higher event and workshop discounts, allowing you to save more."
+        "Access to community events.",
+        "Networking opportunities.",
+        "Volunteer opportunities.",
+        "Recognition on our website.",
+        "Discounts on services.",
+        "Monthly newsletter.",
+        "Priority support.",
+        "Exclusive webinars."
       ]
   },
   {
@@ -38,43 +43,57 @@ const membershipLevels = [
       name: "Gold Membership",
       cost: "$1,000 per year",
       benefits: [
-          "Full access to all benefits of the Silver Membership.",
-          "Exclusive invitations to VIP events and networking sessions.",
-          "Maximum advertising positions, including spotlight placements.",
-          "Priority customer support and assistance.",
-          "Highest event and workshop discounts available."
+          "Access to community events.",
+          "Networking opportunities.",
+          "Volunteer opportunities.",
+          "Recognition on our website.",
+          "Discounts on services.",
+          "Monthly newsletter.",
+          "Priority support.",
+          "Exclusive webinars.",
+          "Free admission to annual gala.",
+          "Personalized business consultation.",
+          "Feature in our monthly magazine."
       ]
   }
 ];
 
-
-const modalCloseBtn = document.querySelector("#close-button");
+const hamburgerButton = document.getElementById("hamButton");
+const closeButton = document.querySelector("#close-button");
 const dialogBox = document.querySelector("dialog");
-const openButtons = document.querySelectorAll(".member");
+const modalButtons = document.querySelectorAll(".member");
 
-modalCloseBtn.addEventListener("click", () => {
+
+function getTimeStamp() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+closeButton.addEventListener("click", () => {
   dialogBox.close();
 })
 
-openButtons.forEach(link => {
-  link.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      const getId = link.getAttribute("id");
-
-      const getMember = membershipLevels.filter((level) => level.id == getId)[0];
-
-      const modalName = document.querySelector("#modal-name");
-      const modalCost = document.querySelector("#modal-cost");
-      const modalContent = document.querySelector("#modal-content");
-
-      modalName.textContent = getMember.name;
-      modalCost.innerHTML = `<strong>Cost:</strong> ${getMember.cost}`;
-      modalContent.innerHTML = `<strong>Benefits:</strong><br>${getMember.benefits}`;
-
+modalButtons.forEach(modalButton => {
+  modalButton.addEventListener("click", () => {
+      const memberId = modalButton.getAttribute("id");
+      const membershipLevel = membershipLevels.filter((level) => level.id == memberId)[0];
+      const name = document.querySelector("#membership-name");
+      const cost = document.querySelector("#membership-cost");
+      const content = document.querySelector("#membership-content");
+      name.textContent = membershipLevel.name;
+      cost.innerHTML = `<strong>Cost:</strong> ${membershipLevel.cost}`;
+      content.innerHTML = `<strong>Benefits: </strong>${membershipLevel.benefits.join(" ")}`;
       dialogBox.showModal();
   })
 })
+
+document.querySelector("#form-timestamp").setAttribute('value', getTimeStamp())
 
 hamburgerButton.addEventListener("click", () => {
   const nav = document.querySelector("nav");

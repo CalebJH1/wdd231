@@ -46,46 +46,35 @@
 
   <main>
   <h1>Join Us Page</h1>
-    <div id="joins">
+    <div id="join-form">
       <h1>Join Us</h1>
 
       <form action="thankyou.html" method="GET">
-          <label>First Name <input type="text" name="first" title="Enter your first name"
-                  autocomplete="given-name" required></label>
-          <label>Last Name <input type="text" name="last" title="Enter your last name" autocomplete="family-name"
-                  required></label>
-          <label>Organization Title <input type="text" name="organization-title"
-                  title="Enter your organization title (minimum 7 characters, letters, hyphes, and spaces only)"
-                  autocomplete="organization-title" pattern="[A-Za-z0-9\- ]{7,}" required></label>
-          <label>Email Address <input type="email" name="email" title="Enter your email address"
-                  placeholder="flash@phcc.com" autocomplete="email" required></label>
-          <label>Mobile Phone Number <input type="tel" name="mobile-phone" title="Enter your mobile phone number"
-                  autocomplete="tel" required></label>
-          <label>Organization Name <input type="text" name="organization" title="Enter your organization's name"
-                  autocomplete="organization" required></label>
+          <label>First Name <input type="text" name="first" title="first-name" autocomplete="first-name" required></label>
+          <label>Last Name <input type="text" name="last" title="last-name" autocomplete="last-name" required></label>
+          <label>Organization Title <input type="text" name="organization-title" title="organization-title" autocomplete="organization-title" pattern="[A-Za-z0-9\- ]{7,}" required></label>
+          <label>Email Address <input type="email" name="email" title="email" placeholder="somebody@gmail.com" autocomplete="email" required></label>
+          <label>Phone Number <input type="tel" name="mobile-phone" title="mobile-phone" autocomplete="phone-number" required></label>
+          <label>Organization Name <input type="text" name="organization" title="organization" autocomplete="organization" required></label>
           <label>Membership Level
-              <select name="membership-level" title="Choose your membership level" required>
+              <select name="membership-level" title="membership-level" required>
                   <option value="" disabled selected>Choose...</option>
-                  <option value="NP Membership" title="For non-profit organizations">NP Membership</option>
-                  <option value="Bronze Membership" title="Bronze Membership">Bronze Membership</option>
-                  <option value="Silver Membership" title="Silver Membership">Silver Membership</option>
-                  <option value="Gold Membership" title="Gold Membership">Gold Membership</option>
+                  <option value="NP Membership" title="non-profit">NP Membership</option>
+                  <option value="Bronze Membership" title="bronze">Bronze Membership</option>
+                  <option value="Silver Membership" title="silver">Silver Membership</option>
+                  <option value="Gold Membership" title="gold">Gold Membership</option>
               </select>
           </label>
-          <label>Organization Description
-              <textarea name="description" title="Provide a brief description of your organization"
-                  required></textarea>
-          </label>
+          <label>Organization Description<textarea name="description" title="description" required></textarea></label>
           <label><input type="hidden" id="form-timestamp" name="timestamp" value=""></label>
-
-          <label><input type="submit" value="Apply for Membership"></label>
+          <label><input type="submit" value="Join the Chamber"></label>
       </form>
   </div>
 
   <div>
       <h1>Membership Levels</h1>
 
-      <div id="membership-modal">
+      <div id="membership-cards">
           <div class="membership-card">
               <p>Non-Profit Membership Level</p>
               <button class="member" id="non-profit">Learn More</button>
@@ -109,9 +98,9 @@
       </div>
 
       <dialog>
-          <h3 id="modal-name"></h3>
-          <p id="modal-cost"></p>
-          <p id="modal-content"></p>
+          <h3 id="membership-name"></h3>
+          <p id="membership-cost"></p>
+          <p id="membership-content"></p>
           <button id="close-button">❌</button>
       </dialog>
 

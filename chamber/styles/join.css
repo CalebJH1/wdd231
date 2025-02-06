@@ -157,7 +157,7 @@
 
     textarea {height: 150px;}
 
-    #membership-modal {
+    #membership-cards {
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -219,12 +219,11 @@
       font-family: var(--main-font), "Arial", sans-serif;
       font-size: 1.5rem;
       background-color: var(--pigment-green);
-      color: var(--celadon);
       border: none;
       border-radius: 1rem;
     }
 
-    .membership-card button:hover {background-color: black; cursor: pointer;}
+    .membership-card button:hover {background-color: black; cursor: pointer; color: var(--celadon);}
 
 
     dialog {
@@ -345,5 +344,5 @@ h2 {text-align: center;}
         flex-direction: column;
     }
 
-    #joins {width: 90%; margin: auto;}
+    #join-form {width: 90%; margin: auto;}
   }
