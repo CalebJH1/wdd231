@@ -1,0 +1,27 @@
+:root {
+    --background-color: #CAF0F8;
+    --heading: #0077B6;
+    --paragraph: #03045E;
+    --accent-color1: #00B4D8;
+    --accent-color2: #90E0Ef;
+    --heading-font: 'Peralta';
+    --paragraph-font: 'Pangolin';
+}
+
+body {background-color: var(--background-color);}
+
+h1 {font-family: var(--heading-font), 'Arial', sans-serif; color: var(--heading);}
+
+p, li {font-family: var(--paragraph-font), 'Arial', sans-serif; color: var(--paragraph);}
+
+.header {padding: 15rem; background: var(--accent-color1);}
+
+button {
+    font-family: var(--paragraph-font), 'Arial', sans-serif;
+    color: var(--paragraph);
+    background-color: var(--accent-color2);
+}
+
+button:hover {background-color: var(--accent-color1);}
+
+img {display: block; margin-bottom: 1rem;}
