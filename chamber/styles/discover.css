@@ -15,6 +15,7 @@
     --paragraph-font: 'Roboto Condensed'
   }
   
+  /*normalize css*/
   body, h1, p, ul, li, a, button {
     text-align: center;
     margin: 0;
@@ -90,6 +91,59 @@
   #hamButton {display: none;}
 
 
+  main {
+    max-width: 2000px;
+    margin: auto;
+  }
+
+  #allPlaces {
+    margin: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #allPlaces div {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--peach-yellow);
+    gap: 1rem;
+    padding: 1rem;
+    border: 3px solid black;
+    display: grid;
+    grid-template-areas:
+    "figure name"
+    "figure description"
+    "address address"
+    "button button";
+  }
+
+  #allPlaces figure {grid-area: figure; margin: 0;}
+
+  #allPlaces h2 {grid-area: name;}
+
+  #allPlaces p {grid-area: description; text-align: justify;}
+
+  #allPlaces address {grid-area: address; font-size: 1.3rem;}
+
+  #allPlaces button {
+    grid-area: button;
+    width: 50%; 
+    height: 50px; 
+    margin: auto;
+    font-family: var(--paragraph-font), 'Arial', sans-serif;
+    border-radius: 50px;
+    border: 3px solid var(--seal-brown);
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  #allPlaces img {border: 2px solid var(--seal-brown); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);}
+
+  #allPlaces button:hover {background-color: rgba(255,255,255,0.2)}
+
+  #allPlaces button:active {background-color: rgba(0,0,0,0.2)}
+
   footer {
     background: var(--dark-green);
     text-align: center;
@@ -101,7 +155,7 @@
   
   footer a {
     display: block;
-    padding: 10px 20px;
+    padding: 8px 18px;
     background-color: var(--dark-pastel-green);
     border-radius: 50px;
   }
@@ -120,15 +174,52 @@
     color: var(--celadon);
     font-size: 1.5em;
   }
-  
-  @media screen and (width <= 1100px) {
+
+  @media screen and (width <= 1300px) {
+    #allPlaces div {
+      grid-template-areas:
+      "figure name"
+      "description description"
+      "address address"
+      "button button";
+    }
+  }
+
+  @media screen and (width <= 1024px) {
+    #allPlaces {grid-template-columns: 1fr;}
+    
+    #allPlaces div {
+      grid-template-areas:
+      "figure name"
+      "figure description"
+      "address address"
+      "button button";
+    }
+
     footer {flex-direction: column;}
     footer div {padding: 1em;}
     #social-media {justify-content: center;}
   }
-  
-  @media screen and (width <= 660px) {
-  
+
+  @media screen and (width <= 640px) {
+    #allPlaces {margin: 0;}
+
+    #allPlaces div {
+      grid-template-areas:
+      "name"
+      "figure"
+      "description"
+      "address"
+      "button";
+      padding: 0;
+      padding-bottom: 10px;
+      border: none;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+    }
+
+    #allPlaces p, #allPlaces address {padding: 0 10px;}
+
     header {background:var(--dark-green);}
   
     .left-side.grid-container {
@@ -165,4 +256,18 @@
     }
   
     nav.show {height: 250px;}
+  }
+
+  @media screen and (width <= 320px) {
+    #social-media a {
+      width: 50px; height: 50px;
+      padding: 10px 20px;
+    }
+
+    #social-media img {
+      width: 35px; height: 35px;
+      position: relative;
+      right: 12px;
+      bottom: 2px;
+    }
   }

@@ -1,3 +1,47 @@
+import {places} from '../data/places.mjs';
+console.log(places);
+
+const allPlaces = document.getElementById('allPlaces');
+
+places.forEach(place => {
+  const div = document.createElement('div');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = place.name;
+  div.appendChild(h2);
+
+  const figure = document.createElement('figure');
+
+  const img = document.createElement('img');
+  img.setAttribute('src', place.photo_url);
+  img.setAttribute('alt', capitalizeWords(place.photo_url.split("/")[1].split(".")[0].replaceAll("-", " ")));
+  figure.appendChild(img);
+
+  const figcaption = document.createElement('figcaption');
+  figcaption.textContent = capitalizeWords(place.photo_url.split("/")[1].split(".")[0].replaceAll("-", " "));
+  figure.appendChild(figcaption);
+  
+  div.appendChild(figure);
+
+  const address = document.createElement('address');
+  address.textContent = place.address;
+  div.appendChild(address);
+
+  const paragraph = document.createElement('p');
+  paragraph.textContent = place.description;
+  div.appendChild(paragraph);
+
+  const button = document.createElement('button');
+  button.textContent = "Learn More";
+  div.appendChild(button);
+
+  allPlaces.appendChild(div);
+});
+
+function capitalizeWords(string) {
+  return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 const hamburgerButton = document.getElementById("hamButton");
 
 hamburgerButton.addEventListener("click", () => {
