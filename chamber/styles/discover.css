@@ -276,7 +276,7 @@
     }
   }
 
-  @media screen and (width > 640px) {
+  @media screen and (width > 1024px) {
     #allPlaces img {transition: opacity 0.3s;}
     #allPlaces img:hover {opacity: 0.7;}
   }
