@@ -15,6 +15,7 @@ places.forEach(place => {
   const img = document.createElement('img');
   img.setAttribute('src', place.photo_url);
   img.setAttribute('alt', capitalizeWords(place.photo_url.split("/")[1].split(".")[0].replaceAll("-", " ")));
+  img.setAttribute('loading', 'lazy');
   figure.appendChild(img);
 
   const figcaption = document.createElement('figcaption');
@@ -54,7 +55,7 @@ function displayLastVisited() {
   if (oldDate !== 0) {
     const differenceInSeconds = newDate / 1000 - oldDate / 1000;
 
-    const differenceInDays = differenceInSeconds / (60 * 60 * 24);
+    const differenceInDays = differenceInSeconds / 86400;
 
     if (differenceInDays < 1) {
       lastVisited.textContent = "Back so soon! Awesome!";

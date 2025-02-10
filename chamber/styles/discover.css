@@ -96,6 +96,8 @@
     margin: auto;
   }
 
+  main > h1 {font-size: 3em; margin: 2rem;}
+
   #allPlaces {
     margin: 1rem;
     display: grid;
@@ -272,4 +274,9 @@
       right: 12px;
       bottom: 2px;
     }
+  }
+
+  @media screen and (width > 640px) {
+    #allPlaces img {transition: opacity 0.3s;}
+    #allPlaces img:hover {opacity: 0.7;}
   }
