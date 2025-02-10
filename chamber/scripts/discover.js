@@ -42,6 +42,36 @@ function capitalizeWords(string) {
   return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
+function displayLastVisited() {
+  const lastVisited = document.getElementById('lastVisited');
+
+  const oldDate = JSON.parse(localStorage.getItem('date')) || 0;
+
+  const newDate = new Date().getTime();
+
+  localStorage.setItem('date', JSON.stringify(newDate));
+
+  if (oldDate !== 0) {
+    const differenceInSeconds = newDate / 1000 - oldDate / 1000;
+
+    const differenceInDays = differenceInSeconds / (60 * 60 * 24);
+
+    if (differenceInDays < 1) {
+      lastVisited.textContent = "Back so soon! Awesome!";
+    } else {
+      if (Math.trunc(differenceInDays) === 1) {
+        lastVisited.textContent = "You last visited a day ago."
+      } else {
+        lastVisited.textContent = `You last visited ${Math.trunc(differenceInDays)} days ago.`;
+      }
+    }
+  } else {
+    lastVisited.textContent = "Welcome! Let us know if you have any questions.";
+  }
+}
+
+displayLastVisited();
+
 const hamburgerButton = document.getElementById("hamButton");
 
 hamburgerButton.addEventListener("click", () => {
