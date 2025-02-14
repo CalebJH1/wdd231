@@ -13,7 +13,7 @@ places.forEach(place => {
   const figure = document.createElement('figure');
 
   const img = document.createElement('img');
-  img.setAttribute('loading', 'lazy');
+  img.setAttribute('loading', "lazy");
   img.setAttribute('src', place.photo_url);
   img.setAttribute('alt', capitalizeWords(place.photo_url.split("/")[1].split(".")[0].replaceAll("-", " ")));
   figure.appendChild(img);
