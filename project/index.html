@@ -19,30 +19,36 @@
 
 <body>
     <header>
-        <h1>Weather Teller</h1>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="history.html">History</a>
-            <a href="join.html">Join</a>
-        </nav>
+        <h1 class="title">Weather Teller</h1>
     </header>
 
+    <nav>
+        <button id="hamButton">&#9776;</button>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <img src="images/hero-image.webp" alt="hero image">
+        <img class="hero-image" src="images/hero-image.webp" alt="hero image">
         <div class="call-to-action">
             <h2>Join Us</h2>
-            <p>Click the button down below to join us.</p>
-            <button class="join">Join</button>
+            <p>Click the button down below to join us and look at exclusive weather data.</p>
+            <a href="join.html">Join</a>
         </div>
         <div class="main-content">
             <h1>Weather Teller - Home</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                Corrupti voluptates soluta perferendis ducimus beatae odio officia cumque doloribus, cupiditate tenetur!</p>
-            <label>Latitude: <input type="text" id="latitude" name="latitude"></label>
-            <label>Longitude: <input type="text" id="longitude" name="longitude"></label>
+            <label for="latitude">Latitude:</label> 
+            <input type="text" id="latitude" name="latitude">
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude">
             <button id="getDataButton">Get Data</button>
             <div id="currentWeather"></div>
-            <div id="weatherForecast"></div>
+            <ul id="weatherForecast"></div>
         </div>
     </main>
 

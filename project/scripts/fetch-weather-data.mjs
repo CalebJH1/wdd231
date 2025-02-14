@@ -11,7 +11,18 @@ const fetchWeatherData = {
         const currentWeather = await getCurrentWeather(this.latitude, this.longitude);
         const weatherForecast = await getWeatherForecast(this.latitude, this.longitude);
         return [currentWeather, weatherForecast];
+    },
+
+    init: function() {
+        const randomLatitude = getRandomNumber(-90, 90);
+        const randomLongitude = getRandomNumber (-180, 180);
+        this.setCoordinates(randomLatitude, randomLongitude);
     }
+}
+
+function getRandomNumber(min, max) {
+    let randomNum = Math.random() * (max - min) + min;
+    return parseFloat(randomNum.toFixed(4));
 }
 
 async function getCurrentWeather(latitude, longitude) {

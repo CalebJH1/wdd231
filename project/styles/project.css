@@ -8,3 +8,194 @@
     --paragraph-font: 'Pangolin';
 }
 
+body, h1, h2, h3, p, ul, li, a, button {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {font-family: var(--heading-font), 'Arial', sans-serif; color: var(--heading);}
+
+p, li, a, button, label, figcaption {font-family: var(--paragraph-font), 'Arial', sans-serif; color: var(--paragraph);}
+
+header {
+    background-color: var(--paragraph);
+    padding: 3rem;
+}
+
+.title {color: var(--accent-color1);}
+
+nav {
+    height: 0;
+    transition: height 0.5s ease-in;
+    background: var(--heading);
+}
+
+nav.show {height: 230px;}
+
+#hamButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20pt;
+    border: none;
+    background: var(--paragraph);
+    color: var(--accent-color1);
+}
+
+#hamButton:hover {
+    color: var(--accent-color2);
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    transition: background .15s ease-in;
+    text-decoration: none;
+    color: var(--paragraph);
+    font-family: var(--paragraph-font), 'Arial', sans-serif;
+    font-size: 15pt;
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    padding: 1rem;
+}
+
+a:hover {background-color: rgba(0,0,0,0.2);}
+
+a.active {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+#hamButton:active {color: var(--accent-color1);}
+
+main {
+    position: relative; 
+    background-color: var(--background-color);
+    padding-bottom: 10px;
+}
+
+.hero-image {
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.call-to-action {
+    width: 50vw;
+    position: absolute;
+    top: 5vw;
+    left: 5vw;
+}
+
+.call-to-action * {
+    text-align: left;
+    color: white;
+}
+
+.call-to-action h2 {
+    font-size: calc(15pt + 3vw);
+}
+
+.call-to-action p {
+    margin-top: 15px;
+    font-size: 12pt;
+    font-size: calc(10pt + 2vw);
+}
+
+.call-to-action a {
+    margin-left: 0;
+    width: calc(100px + 6vw);
+    text-align: center;
+    background: var(--accent-color2);
+    color: var(--paragraph);
+    padding: 0;
+    display: block;
+    color: black;
+    border-radius: 5px;
+}
+
+.call-to-action a:hover {
+    background: var(--accent-color1);
+}
+
+.main-content {
+    width: 80%;
+    margin: auto;
+}
+
+.main-content h1 {
+    color: var(--heading);
+    margin: 25px auto;
+}
+
+.main-content p {
+    color: var(--paragraph);
+}
+
+
+.main-content label {
+    display: block;
+    margin-top: 10px;
+}
+
+#getDataButton {
+    display: block;
+    margin: 10px auto;
+    border: 2px solid var(--paragraph);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--paragraph);
+    background-color: var(--accent-color2);
+    transition: background .2s ease-in;
+}
+
+#getDataButton:hover {
+    background-color: var(--paragraph);
+    color: var(--accent-color2);
+    cursor: pointer;
+}
+
+.forecast-item {
+    width: 300px;
+    list-style: none;
+    background-color: var(--accent-color1);
+    margin: 5px auto;
+}
+
+footer {
+    background-color: var(--paragraph);
+    flex-direction: column;
+    display: flex;
+  }
+  
+footer a {
+    display: block;
+    width: 100px;
+    padding: 8px 18px;
+    background-color: var(--accent-color2);
+    border-radius: 50px;
+}
+  
+  #social-media {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  footer a:hover {background-color: var(--accent-color1);}
+  
+  footer a:active {background-color: var(--pigment-green);}
+  
+  footer p {
+    color: var(--accent-color1);
+    font-size: 1.5em;
+  }

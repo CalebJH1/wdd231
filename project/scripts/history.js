@@ -6,7 +6,11 @@ const displayHistory = (history) => {
         historyItem.setAttribute('class', 'history-item');
 
         const h2 = document.createElement('h2');
-        h2.textContent = item.name;
+        if ('name' in item) {
+            h2.textContent = item.name;
+        } else {
+            h2.textContent = `${item.latitude} ${item.longitude}`;
+        }
         historyItem.appendChild(h2);
 
         const showMoreButton = document.createElement('button');
