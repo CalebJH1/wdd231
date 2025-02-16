@@ -20,24 +20,26 @@
 
 <body>
     <header>
-        <h1>Weather Teller</h1>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="history.html">History</a>
-            <a href="join.html">Join</a>
-        </nav>
+        <h1 class="title">Weather Teller</h1>
     </header>
 
+    <nav>
+        <button id="hamButton">&#9776;</button>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <button id="toggleGrid"></button>
-        <button id="toggleList"></button>
-        <div id="history"></div>
-        <dialog>
-            <h3 id="countryName"></h3>
-            <p id="membershipCost"></p>
-            <p id="membershipContent"></p>
-            <button id="closeButton">❌</button>
-        </dialog>
+        <div class="main-content">
+            <button id="toggleGrid"></button>
+            <button id="toggleList"></button>
+            <div id="history"></div>
+            <dialog>
+            </dialog>
+        </div>
     </main>
 
     <footer>
