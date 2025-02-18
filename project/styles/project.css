@@ -57,8 +57,6 @@ ul {
 a {
     transition: background .15s ease-in;
     text-decoration: none;
-    color: var(--paragraph);
-    font-family: var(--paragraph-font), 'Arial', sans-serif;
     font-size: 15pt;
     width: 80%;
     margin: 10px auto;
@@ -101,13 +99,10 @@ main {
     color: white;
 }
 
-.call-to-action h2 {
-    font-size: calc(15pt + 3vw);
-}
+.call-to-action h2 {font-size: calc(15pt + 3vw);}
 
 .call-to-action p {
     margin-top: 15px;
-    font-size: 12pt;
     font-size: calc(10pt + 2vw);
 }
 
@@ -116,16 +111,12 @@ main {
     width: calc(100px + 6vw);
     text-align: center;
     background: var(--accent-color2);
-    color: var(--paragraph);
     padding: .5rem 2rem;
-    display: block;
-    color: black;
     border-radius: 50px;
+    color: var(--paragraph);
 }
 
-.call-to-action a:hover {
-    background: var(--accent-color1);
-}
+.call-to-action a:hover {background: var(--accent-color1);}
 
 .main-content {
     max-width: 1500px;
@@ -133,20 +124,17 @@ main {
     margin: auto;
 }
 
-.main-content h1 {
-    color: var(--heading);
-    margin: 25px auto;
-}
+.main-content h1 {margin: 25px auto;}
 
-.main-content > p {
+.main-content > div > p {
+    font-size: 1.2rem;
     margin: 2rem auto;
-    color: var(--paragraph);
     text-align: justify;
 }
 
 .main-content .error {text-align: center; font-size: 1.5rem;}
 
-.main-content > h2 {padding-top: 1rem;}
+.main-content h2 {padding-top: 1rem;}
 
 .main-content label {
     margin-top: 2rem;
@@ -167,7 +155,6 @@ input[type="tel"] {
     border: 2px solid var(--paragraph);
     padding: 1rem;
     border-radius: 5px;
-    color: var(--paragraph);
     background-color: var(--accent-color2);
     transition: background .2s ease-in;
     width: 50%;
@@ -189,7 +176,7 @@ input[type="tel"] {
     background-color: var(--accent-color1);
 }
 
-#weatherForecast {
+#weatherForecast, #history {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
@@ -205,14 +192,7 @@ input[type="tel"] {
 
 .forecast-item h3 {color: var(--paragraph)}
 
-#history {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.history-item * {
-    margin: 10px;
-}
+.history-item * {margin: 10px;}
 
 .history-item h2 {color: var(--paragraph);}
 
@@ -242,11 +222,9 @@ dialog button {
 
 .benefits p {text-align: justify;}
 
-.the-form {margin-top: 1rem;}
-
 #formResults {
     margin: 2vw;
-    line-height: 50px;
+    line-height: 25px;
 }
 
 #formResults li {
@@ -255,11 +233,16 @@ dialog button {
     font-size: 1.2rem;
 }
 
+.results #currentWeather {padding: 2rem;}
+
+.results .wind {margin-top: 1rem; font-size: 15pt; font-weight: bold;}
+
 .wind-info, .time-created {margin: 1rem .5rem 0 .5rem; font-size: 9pt;}
 
 footer {
     margin: auto;
     padding: 1rem 0;
+    padding-bottom: 5rem;
     background-color: var(--paragraph);
     display: flex;
     flex-direction: column;
@@ -279,9 +262,14 @@ footer {
   
 #social-media a:hover {background-color: var(--accent-color1);}
   
-#social-media a:active {background-color: var(--pigment-green);}
-  
 footer p {
     color: var(--accent-color1);
     font-size: 1.5em;
+}
+
+a[href="https://openweathermap.org"] {
+    color: var(--accent-color1);
+    display: inline;
+    padding: .2rem;
+    text-decoration: underline;
 }

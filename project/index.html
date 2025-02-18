@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is the discover page for the Washington Chamber of Commerce.">
+    <meta name="description" content="This is the home or landing page for the Weather Teller website.">
     <meta name="author" content="Caleb Heilmann">
     <title>Weather Teller</title>
     <meta property="og:title" content="Weather Teller">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://calebjh1.github.io/wdd231/chamber/images/web-image.jpg">
+    <meta property="og:image" content="https://calebjh1.github.io/wdd231/project/images/hero-image.webp">
     <meta property="og:url" content="https://calebjh1.github.io/wdd231/project/index.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,40 +28,47 @@
         <button id="hamButton">&#9776;</button>
         <ul>
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="join.html">Join</a></li>
+            <li><a href="history.html" target="_blank">History</a></li>
+            <li><a href="join.html" target="_blank">Join</a></li>
         </ul>
     </nav>
 
-    <main>
+    <main id="landingPage">
         <img class="hero-image" src="images/hero-image.webp" alt="hero image">
         <div class="call-to-action">
             <h2>Join Us</h2>
-            <p>Click the button down below to join us and look at exclusive weather data.</p>
-            <a href="join.html">Join</a>
+            <p>Click the button down below to join and look at exclusive weather data.</p>
+            <a href="join.html" target="_blank">Join</a>
         </div>
         <div class="main-content">
-            <p>Welcome to Weather Teller, your go-to source for accurate and up-to-date weather information. Enter your location's latitude and longitude to get the current weather and a detailed forecast. Our service provides real-time data, ensuring you are always informed about the latest weather conditions. Whether you're planning a trip, preparing for a storm, or just curious about the weather, Weather Teller has you covered.</p>
-            <label for="latitude">Latitude:</label> 
-            <input type="text" id="latitude" name="latitude">
-            <label for="longitude">Longitude:</label>
-            <input type="text" id="longitude" name="longitude">
-            <button id="getDataButton">Get Data</button>
-            <p class="error"></p>
-            <h2>Current Weather</h2>
-            <div id="currentWeather"></div>
-            <h2>Weather Forecast</h2>
-            <ul id="weatherForecast"></ul>
+            <div class="overview"><p>Welcome to Weather Teller, your go-to source for accurate and up-to-date weather information. 
+                Enter your location's latitude and longitude to get the current weather and a detailed forecast. 
+                This service provides real-time data, ensuring you are always informed about the latest weather conditions. 
+                Whether you're planning a trip, preparing for a storm, or just curious about the weather, Weather Teller has you covered.</p></div>
+            <div class="inputs">
+                <label for="latitude">Latitude:</label> 
+                <input type="text" id="latitude" name="latitude">
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude">
+                <button id="getDataButton">Get Data</button>
+                <p class="error"></p>
+            </div>
+            <div class="current-weather">
+                <h2>Current Weather</h2>
+                <div id="currentWeather"></div>
+            </div>
+            <div class="weather-forecast">
+                <h2>Weather Forecast</h2>
+                <ul id="weatherForecast"></ul>
+            </div>
         </div>
     </main>
 
     <footer>
         <div>
-            <p>Washington Chamber of Commerce</p>
-            <p>700 Evergreen Boulevard (Fake)</p>
-            <p>Washington State 300 (Fake)</p>
-            <p>info@chamber.com</p>
-            <p>123-456-7890</p>
+            <p>WDD231 Individual Project</p>
+            <p>Caleb Heilmann</p>
+            <p>&copy;<span id="year"></span> Weather Teller</p>
         </div>
         <div id="social-media">
             <a href="https://youtube.com" target="_blank"><img src="images/youtube-logo.png" alt="youtube"></a>
@@ -69,10 +76,8 @@
             <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-logo.png" alt="linkedin"></a>
         </div>
         <div>
-            <p>WDD231 Class Project</p>
-            <p>Caleb Heilmann</p>
-            <p>&copy;<span id="year"></span> Washington Chamber of Commerce</p>
             <p>Last Modification: <span id="lastModified"></span></p>
+            <p>Site Used: <a href="https://openweathermap.org" target="_blank">openweathermap.org</a></p>
         </div>
     </footer>
 

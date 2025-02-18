@@ -41,7 +41,6 @@ const displayCurrentWeather = (data) => {
         currentTemp.textContent = `The current temperature in ${data.name} is ${Math.round(data.main.temp)}°F (latitude: ${data.coord.lat}, longitude: ${data.coord.lon}).`;
     }
     
-    // data.weather = [{id: 800, main: 'Clear', description: 'clear sky', icon: '01n'}, {id: 800, main: 'Clear', description: 'clear sky', icon: '01n'}]
     currentWeather.appendChild(currentTemp);
     data.weather.forEach(weather => {
         const figure = document.createElement('figure');
@@ -76,7 +75,6 @@ const displayForecast = (data) => {
 }
 
 const updateHistory = (data) => {
-    // localStorage.setItem('history', JSON.stringify([]));
     const history = JSON.parse(localStorage.getItem('history')) || [];
     const object = {};
     if (data.name !== "") {

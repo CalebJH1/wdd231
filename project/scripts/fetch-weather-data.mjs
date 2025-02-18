@@ -26,7 +26,7 @@ function getRandomNumber(min, max) {
 }
 
 async function getCurrentWeather(latitude, longitude) {
-    const url = `//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=d058bca00aab868d78e766a79f4ed821`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=d058bca00aab868d78e766a79f4ed821`;
     try {
         const response = await fetch(url);
         if (response.ok) {
@@ -41,7 +41,7 @@ async function getCurrentWeather(latitude, longitude) {
 }
 
 async function getWeatherForecast(latitude, longitude) {
-    const url = `//api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=d058bca00aab868d78e766a79f4ed821`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=d058bca00aab868d78e766a79f4ed821`;
     try {
         const response = await fetch(url);
         if (response.ok) {

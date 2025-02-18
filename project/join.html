@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is the discover page for the Washington Chamber of Commerce.">
+    <meta name="description" content="This is the join page for the Weather Teller website. In this page, you have the option to join and look at exclusive weather data.">
     <meta name="author" content="Caleb Heilmann">
-    <title>Weather Teller</title>
-    <meta property="og:title" content="Weather Teller">
+    <title>Weather Teller - Join</title>
+    <meta property="og:title" content="Weather Teller - Join">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://calebjh1.github.io/wdd231/chamber/images/web-image.jpg">
-    <meta property="og:url" content="https://calebjh1.github.io/wdd231/project/index.html">
+    <meta property="og:image" content="https://calebjh1.github.io/wdd231/project/images/hero-image.webp">
+    <meta property="og:url" content="https://calebjh1.github.io/wdd231/project/join.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Peralta&display=swap" rel="stylesheet">
     <link rel="icon" href="weather-icon.ico">
     <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="styles/project-medium.css">
+    <link rel="stylesheet" href="styles/project-large.css">
     <script src="scripts/join.js" defer></script>
 </head>
 
@@ -26,16 +28,16 @@
     <nav>
         <button id="hamButton">&#9776;</button>
         <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="join.html">Join</a></li>
+            <li><a href="index.html" target="_blank">Home</a></li>
+            <li><a href="history.html" target="_blank">History</a></li>
+            <li><a href="#" class="active">Join</a></li>
         </ul>
     </nav>
 
-    <main>
+    <main id="formPage">
         <div class="main-content">
             <div class="benefits">
-                <h2>Benefits of Detailed Weather Information</h2>
+                <h2>Benefits of Joining</h2>
                 <p>Having access to detailed weather information can greatly enhance your daily planning and safety. Knowing the temperature it feels like, rather than just the actual temperature, helps you dress appropriately for the weather conditions. Understanding the minimum and maximum temperatures allows you to prepare for the day's range of weather, ensuring you are never caught off guard.
                 Wind speed and direction are crucial for outdoor activities, such as sailing, flying, or even a simple picnic. High wind speeds and gusts can pose safety risks, so being aware of these conditions can help you make informed decisions. Additionally, wind degrees provide precise information about the wind's direction, which is essential for various professional and recreational activities.
                 Overall, detailed weather information empowers you to make better decisions, stay safe, and enjoy your day to the fullest.</p>
@@ -63,11 +65,9 @@
 
     <footer>
         <div>
-            <p>Washington Chamber of Commerce</p>
-            <p>700 Evergreen Boulevard (Fake)</p>
-            <p>Washington State 300 (Fake)</p>
-            <p>info@chamber.com</p>
-            <p>123-456-7890</p>
+            <p>WDD231 Individual Project</p>
+            <p>Caleb Heilmann</p>
+            <p>&copy;<span id="year"></span> Weather Teller</p>
         </div>
         <div id="social-media">
             <a href="https://youtube.com" target="_blank"><img src="images/youtube-logo.png" alt="youtube"></a>
@@ -75,10 +75,8 @@
             <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-logo.png" alt="linkedin"></a>
         </div>
         <div>
-            <p>WDD231 Class Project</p>
-            <p>Caleb Heilmann</p>
-            <p>&copy;<span id="year"></span> Washington Chamber of Commerce</p>
             <p>Last Modification: <span id="lastModified"></span></p>
         </div>
     </footer>
 </body>
+</html>
