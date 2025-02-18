@@ -45,7 +45,7 @@ const displayHistory = (history) => {
                 icon.setAttribute('src', item.icon[item.description.indexOf(description)]);
                 icon.setAttribute('alt', description);
 
-                caption.textContent = description;
+                caption.textContent = capitalizeWords(description);
 
                 figure.appendChild(icon);
                 figure.appendChild(caption);
@@ -58,11 +58,19 @@ const displayHistory = (history) => {
                     const maxTemp = document.createElement('p');
                     const wind = document.createElement('p');
 
+                    wind.setAttribute('class', 'wind-info');
+
                     feelsLikeTemp.textContent = `Feels like: ${Math.round(item.feelsLikeTemp)}°F`;
                     minTemp.textContent = `Minimum temperature: ${Math.round(item.minTemp)}°F`;
                     maxTemp.textContent = `Maximum temperature: ${Math.round(item.maxTemp)}°F`;
-                    wind.textContent = `Wind: (Deg: ${item.windDeg}°, Speed: ${item.windSpeed} mph, Gust: ${item.windGust})`;
 
+                    if (item.windGust !== "N/A") {
+                        const gust = Math.round(item.windGust * 10) / 10;
+                        wind.textContent = `Wind: (Deg: ${item.windDeg}°, Speed: ${Math.round(item.windSpeed * 10) / 10}mph, Gust: ${gust}mph)`;
+                    } else {
+                        wind.textContent = `Wind: (Deg: ${item.windDeg}°, Speed: ${Math.round(item.windSpeed * 10) / 10}mph, Gust: ${item.windGust})`;
+                    }
+                    
                     dialog.appendChild(feelsLikeTemp);
                     dialog.appendChild(minTemp);
                     dialog.appendChild(maxTemp);
@@ -71,6 +79,7 @@ const displayHistory = (history) => {
             });
 
             const timeCreated = document.createElement('p');
+            timeCreated.setAttribute('class', 'time-created')
             timeCreated.textContent = `Time created: ${item.date}, ${item.time}`;
             dialog.appendChild(timeCreated);
         });
@@ -80,10 +89,26 @@ const displayHistory = (history) => {
     });
 }
 
+function capitalizeWords(string) {
+    return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 const history = JSON.parse(localStorage.getItem('history'));
 console.log(history);
 
 displayHistory(history.reverse());
+
+const hamburgerButton = document.getElementById('hamButton');
+
+hamburgerButton.addEventListener("click", () => {
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("show");
+    if (nav.classList.contains("show")) {
+      hamburgerButton.innerHTML = "&#x2715;";
+    } else {
+      hamburgerButton.innerHTML = "&#9776;";
+    }
+  });
 
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;

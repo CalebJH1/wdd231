@@ -1,0 +1,23 @@
+@media screen and (width > 640px) {
+    #hamButton {
+        display: none;
+    }
+
+    header {
+        font-size: calc(16px + 1vw);
+        padding: calc(48px + 1vw);
+    }
+
+    nav {height: auto;}
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: space-evenly;
+    }
+
+    nav a {width: auto;}
+
+    nav li {width: 30%;}
+}

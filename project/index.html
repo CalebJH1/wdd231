@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Peralta&display=swap" rel="stylesheet">
     <link rel="icon" href="weather-icon.ico">
     <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="styles/project-medium.css">
+    <link rel="stylesheet" href="styles/project-large.css">
 </head>
 
 <body>
@@ -39,15 +41,16 @@
             <a href="join.html">Join</a>
         </div>
         <div class="main-content">
-            <h1>Weather Teller - Home</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-               Corrupti voluptates soluta perferendis ducimus beatae odio officia cumque doloribus, cupiditate tenetur!</p>
+            <p>Welcome to Weather Teller, your go-to source for accurate and up-to-date weather information. Enter your location's latitude and longitude to get the current weather and a detailed forecast. Our service provides real-time data, ensuring you are always informed about the latest weather conditions. Whether you're planning a trip, preparing for a storm, or just curious about the weather, Weather Teller has you covered.</p>
             <label for="latitude">Latitude:</label> 
             <input type="text" id="latitude" name="latitude">
             <label for="longitude">Longitude:</label>
             <input type="text" id="longitude" name="longitude">
             <button id="getDataButton">Get Data</button>
+            <p class="error"></p>
+            <h2>Current Weather</h2>
             <div id="currentWeather"></div>
+            <h2>Weather Forecast</h2>
             <ul id="weatherForecast"></ul>
         </div>
     </main>

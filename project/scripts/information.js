@@ -2,11 +2,10 @@ import fetchWeatherData from "./fetch-weather-data.mjs";
 
 const currentWeather = document.getElementById('currentWeather');
 const weatherForecast = document.getElementById('weatherForecast');
+const message = document.querySelector('.error');
 
 async function fetchData() {
-    const message = document.createElement('p');
     message.textContent = "Waiting...";
-    currentWeather.appendChild(message);
     const data = await fetchWeatherData.getData();
     console.log(data);
     if (data[0] === undefined || data[1] === undefined) {
@@ -19,14 +18,15 @@ async function fetchData() {
 }
 
 const displayCurrentWeather = (data) => {
+    message.textContent = '';
     currentWeather.innerHTML = '';
     console.log(data);
     const currentTemp = document.createElement('p');
     currentTemp.setAttribute('id', 'currentTemp');
     if (data.name === "") {
-        currentTemp.textContent = `The current temperature in the area with a latitude of ${data.coord.lat} and a longitude of ${data.coord.lon} is ${Math.round(data.main.temp)}°F`;
+        currentTemp.textContent = `The current temperature in the area with a latitude of ${data.coord.lat} and a longitude of ${data.coord.lon} is ${Math.round(data.main.temp)}°F.`;
     } else {
-        currentTemp.textContent = `The current temperature in ${data.name} is ${Math.round(data.main.temp)}°F (latitude: ${data.coord.lat}, longitude: ${data.coord.lon})`;
+        currentTemp.textContent = `The current temperature in ${data.name} is ${Math.round(data.main.temp)}°F (latitude: ${data.coord.lat}, longitude: ${data.coord.lon}).`;
     }
     
     // data.weather = [{id: 800, main: 'Clear', description: 'clear sky', icon: '01n'}, {id: 800, main: 'Clear', description: 'clear sky', icon: '01n'}]
@@ -41,7 +41,7 @@ const displayCurrentWeather = (data) => {
         icon.setAttribute('class', "weather-icon");
         icon.setAttribute('src', iconsrc);
         icon.setAttribute('alt', desc);
-        caption.textContent = desc;
+        caption.textContent = capitalizeWords(desc);
         figure.appendChild(icon);
         figure.appendChild(caption);
         currentWeather.appendChild(figure);
@@ -64,7 +64,17 @@ const displayCurrentWeather = (data) => {
 
     const wind = document.createElement('p');
     wind.setAttribute('class', 'wind');
-    wind.textContent = `Deg: ${data.wind.deg}°, Speed: ${data.wind.speed} m/s, Gust: ${data.wind.gust}`;
+
+    let gust = "";
+
+    if (data.wind.gust === undefined) {
+        gust = "N/A";
+    } else {
+        gust = Math.round(data.wind.gust * 10) / 10 + "mph";
+    }
+
+
+    wind.textContent = `Wind: (Deg: ${data.wind.deg}°, Speed: ${Math.round(data.wind.speed * 10) / 10}mph, Gust: ${gust})`;
     currentWeather.appendChild(wind);
 }
 
@@ -72,14 +82,23 @@ const displayForecast = (data) => {
     data.list.forEach(day => {
         const iconsrc = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
         const desc = day.weather[0].description;
-        const wind = `Deg: ${day.wind.deg}°, Speed: ${day.wind.speed} mph, Gust: ${day.wind.gust}`;
+
+        let gust = "";
+
+        if (day.wind.gust === undefined) {
+            gust = "N/A";
+        } else {
+            gust = Math.round(day.wind.gust * 10) / 10 + "mph";
+        }
+
+        const wind = `Deg: ${day.wind.deg}°, Speed: ${Math.round(day.wind.speed * 10) / 10}mph, Gust: ${gust}`;
         weatherForecast.innerHTML += `
         <li class="forecast-item">
             <h3>${new Date(day.dt * 1000).toLocaleDateString("en-US", { weekday: "long" })} ${new Date(day.dt * 1000).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" })}</h3>
             <p>Temperature: ${Math.round(day.main.temp)}°F</p>
             <img loading="lazy" src="${iconsrc}" alt="${desc}">
-            <p>${desc}</p>
-            <p>Wind: (${wind})</p>
+            <p>${capitalizeWords(desc)}</p>
+            <p class="wind-info">Wind: (${wind})</p>
         </li>`;
     });
 }
@@ -99,7 +118,13 @@ const updateHistory = (data) => {
     object.maxTemp = data.main.temp_max;
     object.windDeg = data.wind.deg;
     object.windSpeed = data.wind.speed;
-    object.windGust = data.wind.gust;
+
+    if (data.wind.gust === undefined) {
+        object.windGust = "N/A";
+    } else {
+        object.windGust = data.wind.gust;
+    }
+
     object.icon = [];
     object.description = [];
     data.weather.forEach(weatherData => {
@@ -136,15 +161,21 @@ function show(field) {
     return result;
 }
 
+function capitalizeWords(string) {
+    return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 const formResults = document.getElementById("formResults");
 
 formResults.innerHTML = `
-<p>First name: ${show("first")}</p>
-<p>Last name: ${show("last")}</p>
-<p>Email: ${show("email")}</p>
-<p>Phone number: ${show("phone")}</p>
-<p>Latitude: ${show("latitude")}</p>
-<p>Longitude: ${show("longitude")}</p>
+<ul>
+    <li>First name: ${show("first")}</li>
+    <li>Last name: ${show("last")}</li>
+    <li>Email: ${show("email")}</li>
+    <li>Phone number: ${show("phone")}</li>
+    <li>Latitude: ${show("latitude")}</li>
+    <li>Longitude: ${show("longitude")}</li>
+</ul>
 `;
 
 fetchWeatherData.setCoordinates(show("latitude"), show("longitude"));

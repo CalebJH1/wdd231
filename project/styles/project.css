@@ -17,7 +17,7 @@ body, h1, h2, h3, p, ul, li, a, button {
 
 h1, h2, h3 {font-family: var(--heading-font), 'Arial', sans-serif; color: var(--heading);}
 
-p, li, a, button, label, figcaption {font-family: var(--paragraph-font), 'Arial', sans-serif; color: var(--paragraph);}
+p, li, a, button, label, figcaption, input[type=submit] {font-family: var(--paragraph-font), 'Arial', sans-serif; color: var(--paragraph);}
 
 header {
     background-color: var(--paragraph);
@@ -29,7 +29,7 @@ header {
 nav {
     height: 0;
     transition: height 0.5s ease-in;
-    background: var(--heading);
+    background: var(--accent-color1);
 }
 
 nav.show {height: 230px;}
@@ -69,6 +69,7 @@ a {
 a:hover {background-color: rgba(0,0,0,0.2);}
 
 a.active {
+    background-color: rgba(0,0,0,0.2);
     font-weight: 800;
     text-decoration: underline;
 }
@@ -116,10 +117,10 @@ main {
     text-align: center;
     background: var(--accent-color2);
     color: var(--paragraph);
-    padding: 0;
+    padding: .5rem 2rem;
     display: block;
     color: black;
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 .call-to-action a:hover {
@@ -127,7 +128,8 @@ main {
 }
 
 .main-content {
-    width: 80%;
+    max-width: 1500px;
+    width: 95%;
     margin: auto;
 }
 
@@ -136,66 +138,150 @@ main {
     margin: 25px auto;
 }
 
-.main-content p {
+.main-content > p {
+    margin: 2rem auto;
     color: var(--paragraph);
+    text-align: justify;
 }
 
+.main-content .error {text-align: center; font-size: 1.5rem;}
+
+.main-content > h2 {padding-top: 1rem;}
 
 .main-content label {
+    margin-top: 2rem;
+    text-align: left;
     display: block;
-    margin-top: 10px;
 }
 
-#getDataButton {
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 98%;
+    padding: .5em 0;
+}
+
+#getDataButton, input[type="submit"] {
     display: block;
     margin: 10px auto;
     border: 2px solid var(--paragraph);
-    padding: 10px;
+    padding: 1rem;
     border-radius: 5px;
     color: var(--paragraph);
     background-color: var(--accent-color2);
     transition: background .2s ease-in;
+    width: 50%;
+    margin-top: 1.5rem;
+    font-size: 15pt;
 }
 
-#getDataButton:hover {
+#getDataButton:hover, input[type="submit"]:hover, .history-item button:hover {
     background-color: var(--paragraph);
     color: var(--accent-color2);
     cursor: pointer;
 }
 
-.forecast-item {
-    width: 300px;
-    list-style: none;
+#currentWeather {
+    margin: 2rem auto;
+    margin-top: 0;
+    border: 3px solid var(--paragraph);
+    padding: 1rem;
     background-color: var(--accent-color1);
-    margin: 5px auto;
 }
 
+#weatherForecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.forecast-item, .history-item {
+    border: 3px solid var(--accent-color1);
+    list-style: none;
+    background-color: var(--accent-color2);
+    width: 95%;
+    margin: 1rem auto;
+    padding: 2rem 0;
+}
+
+.forecast-item h3 {color: var(--paragraph)}
+
+#history {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.history-item * {
+    margin: 10px;
+}
+
+.history-item h2 {color: var(--paragraph);}
+
+.history-item button {
+    padding: 1rem;
+    width: 50%;
+    border-radius: 50px;
+    background-color: var(--accent-color1);
+    border: 2px solid var(--paragraph);
+    font-size: 1rem;
+    transition: background .2s ease-in;
+}
+
+dialog button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.benefits h2 {
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.benefits p {text-align: justify;}
+
+.the-form {margin-top: 1rem;}
+
+#formResults {
+    margin: 2vw;
+    line-height: 50px;
+}
+
+#formResults li {
+    text-align: left;
+    margin: 2vw;
+    font-size: 1.2rem;
+}
+
+.wind-info, .time-created {margin: 1rem .5rem 0 .5rem; font-size: 9pt;}
+
 footer {
+    margin: auto;
+    padding: 1rem 0;;
     background-color: var(--paragraph);
     flex-direction: column;
     display: flex;
-  }
+}
   
-footer a {
-    display: block;
-    width: 100px;
-    padding: 8px 18px;
+#social-media {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#social-media a {
+    width: calc(100px + 4vw);
+    margin: 2rem 0;
     background-color: var(--accent-color2);
     border-radius: 50px;
 }
   
-  #social-media {
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-  }
+#social-media a:hover {background-color: var(--accent-color1);}
   
-  footer a:hover {background-color: var(--accent-color1);}
+#social-media a:active {background-color: var(--pigment-green);}
   
-  footer a:active {background-color: var(--pigment-green);}
-  
-  footer p {
+footer p {
     color: var(--accent-color1);
     font-size: 1.5em;
-  }
+}
