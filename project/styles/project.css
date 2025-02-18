@@ -259,10 +259,10 @@ dialog button {
 
 footer {
     margin: auto;
-    padding: 1rem 0;;
+    padding: 1rem 0;
     background-color: var(--paragraph);
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
 }
   
 #social-media {

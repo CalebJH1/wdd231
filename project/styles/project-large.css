@@ -16,5 +16,25 @@
     
     .call-to-action a {max-width: 300px;}
 
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer > * {
+        width: 25%;
+    }
+
+    #social-media {
+        display: flex;
+        justify-content: space-around;
+    }
     
+    #social-media a {
+        width: calc(100px + 1vw);
+        margin: 2rem 0;
+        background-color: var(--accent-color2);
+        border-radius: 50px;
+    }
 }
