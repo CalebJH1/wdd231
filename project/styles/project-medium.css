@@ -6,7 +6,7 @@
         padding: calc(48px + 1vw);
     }
 
-    nav {height: auto;}
+    nav, nav.show {height: auto;}
 
     nav ul {
         flex-direction: row;
