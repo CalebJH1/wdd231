@@ -268,7 +268,7 @@ footer p {
     font-size: 1.5em;
 }
 
-a[href="citations.html"] {
+a[href="citations.html"], a[href="https://www.loom.com/share/50dbaf4f0bdb4b52933442ce329bf9ee?sid=76befce3-88f7-4650-a4f5-87e6943582c8"] {
     color: var(--accent-color1);
     display: inline;
     padding: .2rem;

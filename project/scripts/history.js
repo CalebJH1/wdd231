@@ -41,7 +41,6 @@ const displayHistory = (history) => {
                 const icon = document.createElement('img');
                 const caption = document.createElement('figcaption');
 
-                console.log(item.description.indexOf(description));
                 icon.setAttribute('src', item.icon[item.description.indexOf(description)]);
                 icon.setAttribute('alt', description);
 
@@ -94,7 +93,6 @@ function capitalizeWords(string) {
 }
 
 const history = JSON.parse(localStorage.getItem('history'));
-console.log(history);
 
 displayHistory(history.reverse());
 

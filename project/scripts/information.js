@@ -7,7 +7,6 @@ const message = document.querySelector('.error');
 async function fetchData() {
     message.textContent = "Waiting...";
     const data = await fetchWeatherData.getData();
-    console.log(data);
     if (data[0] === undefined || data[1] === undefined) {
         message.textContent = "Something went wrong. Try again.";
     } else {
@@ -20,7 +19,6 @@ async function fetchData() {
 const displayCurrentWeather = (data) => {
     message.textContent = '';
     currentWeather.innerHTML = '';
-    console.log(data);
     const currentTemp = document.createElement('p');
     currentTemp.setAttribute('id', 'currentTemp');
     if (data.name === "") {
@@ -131,7 +129,6 @@ const updateHistory = (data) => {
     });
     object.date = new Date().toLocaleDateString();
     object.time = new Date().toLocaleTimeString();
-    console.log(object);
     history.push(object);
     if (history.length > 20) {
         history.shift();

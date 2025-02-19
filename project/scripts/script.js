@@ -17,7 +17,6 @@ async function fetchData() {
     weatherForecast.innerHTML = '';
     message.textContent = "Waiting...";
     const data = await fetchWeatherData.getData();
-    console.log(data);
     if (data[0] === undefined || data[1] === undefined) {
         message.textContent = "Something went wrong. Try again.";
     } else {
@@ -30,7 +29,6 @@ async function fetchData() {
 }
 
 const displayCurrentWeather = (data) => {
-    console.log(data);
     currentWeather.innerHTML = '';
     message.textContent = '';
     const currentTemp = document.createElement('p');
@@ -91,7 +89,6 @@ const updateHistory = (data) => {
     });
     object.date = new Date().toLocaleDateString();
     object.time = new Date().toLocaleTimeString();
-    console.log(object);
     history.push(object);
     if (history.length > 20) {
         history.shift();
